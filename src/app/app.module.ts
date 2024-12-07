@@ -16,7 +16,7 @@ import { InventoryComponent } from './Modules/inventory/inventory.component';
 import { InventoryDashboardComponent } from './Modules/inventory/dashboard/dashboard.component';
 import { LogisticsComponent } from './Modules/logistics/logistics.component';
 import { LogisticsDashboardComponent } from './Modules/logistics/dashboard/dashboard.component';
-import { LogisticsManagmentComponent } from './Modules/logistics/logistics-managment/logistics-managment.component';
+// import { LogisticsManagmentComponent } from './Modules/logistics/logistics-managment/logistics-managment.component';
 import { EmployeesComponent } from './Modules/employees/employees.component';
 import { HumanResourcesComponent } from './Modules/human-resources/human-resources.component';
 import { HRDashboardComponent } from './Modules/human-resources/hrdashboard/hrdashboard.component';
@@ -57,7 +57,7 @@ import {
     InventoryDashboardComponent,
     LogisticsComponent,
     LogisticsDashboardComponent,
-    LogisticsManagmentComponent,
+    // LogisticsManagmentComponent,
     EmployeesComponent,
     HumanResourcesComponent,
     HRDashboardComponent,
