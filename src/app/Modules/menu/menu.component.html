@@ -1,0 +1,25 @@
+<div class="container">
+  <kendo-svg-icon
+    [icon]="spellCheckerIcon"
+    [size]="'large'"
+    class="float-left"
+  ></kendo-svg-icon>
+  <kendo-svgicon
+    [icon]="logoutIcon"
+    size="xlarge"
+    class="float-right"
+  ></kendo-svgicon>
+  <kendo-svgicon
+    [icon]="userIcon"
+    size="xlarge"
+    class="float-right"
+  ></kendo-svgicon>
+  <kendo-menu
+    size="large"
+    [items]="items"
+    [vertical]="false"
+    (select)="selectRoute($event)"
+    class="float-right"
+  ></kendo-menu>
+</div>
+<router-outlet></router-outlet>

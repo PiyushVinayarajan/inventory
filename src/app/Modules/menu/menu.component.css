@@ -1,0 +1,20 @@
+.container {
+  overflow: hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+  padding: 5px;
+}
+.k-svg-icon.k-icon-lg {
+  width: 41px;
+  height: 41px;
+  padding: 5px;
+}
+.k-menu-link-text {
+  font-size: large;
+}

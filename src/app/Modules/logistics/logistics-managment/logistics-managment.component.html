@@ -1,0 +1,71 @@
+<kendo-grid
+  [data]="view | async"
+  [pageSize]="gridState.take"
+  [skip]="gridState.skip"
+  [sort]="gridState.sort"
+  [pageable]="true"
+  [sortable]="true"
+  (dataStateChange)="onStateChange($event)"
+  (edit)="editHandler($event)"
+  (cancel)="cancelHandler($event)"
+  (save)="saveHandler($event)"
+  (remove)="removeHandler($event)"
+  (add)="addHandler($event)"
+  [navigable]="true"
+>
+  <ng-template kendoGridToolbarTemplate>
+    <button kendoGridAddCommand>Add new</button>
+  </ng-template>
+  <kendo-grid-column
+    field="ProductName"
+    title="Product Name"
+  ></kendo-grid-column>
+  <kendo-grid-column
+    field="UnitPrice"
+    editor="numeric"
+    title="Price"
+  ></kendo-grid-column>
+
+  <kendo-grid-column
+    field="UnitsInStock"
+    editor="numeric"
+    title="Units In Stock"
+  ></kendo-grid-column>
+  <kendo-grid-command-column title="command" [width]="220">
+    <ng-template kendoGridCellTemplate let-isNew="isNew">
+      <button kendoGridEditCommand [primary]="true">Edit</button>
+      <button kendoGridRemoveCommand>Remove</button>
+      <button kendoGridSaveCommand [disabled]="formGroup?.invalid ?? true">
+        {{ isNew ? "Add" : "Update" }}
+      </button>
+      <button kendoGridCancelCommand>
+        {{ isNew ? "Discard changes" : "Cancel" }}
+      </button>
+    </ng-template>
+  </kendo-grid-command-column>
+  <kendo-grid-column
+    field="Discontinued"
+    title="Discontinued"
+    [editable]="false"
+  >
+    <ng-template
+      kendoGridCellTemplate
+      let-dataItem="dataItem"
+      let-column="column"
+    >
+      <input
+        kendoGridFocusable
+        type="checkbox"
+        name="Discontinued"
+        #discontinued
+        [formControl]="getFormControl(dataItem, column.field)"
+        (change)="onDiscontinueChange(dataItem, column.field, $event)"
+        kendoCheckBox
+      /><kendo-label
+        class="k-radio-label"
+        [for]="discontinued"
+        text=""
+      ></kendo-label>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>
